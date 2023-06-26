@@ -8,6 +8,7 @@ interface ButtonProps {
   onClick?: () => void;
   buttonStyle?: string;
   buttonSize?: string;
+  className?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -17,13 +18,8 @@ export const Button: React.FC<ButtonProps> = ({
   buttonStyle,
   buttonSize,
 }) => {
-const checkButtonStyle = (buttonStyle as string)
-  ? buttonStyle
-  : [0];
-
-const checkButtonSize = (buttonSize as string)
-  ? buttonSize
-  : [0];
+  const checkButtonStyle = buttonStyle ? buttonStyle : '';
+  const checkButtonSize = buttonSize ? buttonSize : '';
 
   return (
     <Link to='/sign-up' className='btn-mobile'>
